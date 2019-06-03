@@ -4,9 +4,11 @@
   "private": true,
   "dependencies": {
     "cross-env": "^5.2.0",
+    "open-color": "^1.7.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "react-scripts": "3.0.1"
+    "react-scripts": "3.0.1",
+    "styled-components": "^4.2.1"
   },
   "scripts": {
     "start": "cross-env NODE_PATH=src react-scripts start",
