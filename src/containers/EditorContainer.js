@@ -2,6 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 import oc from 'open-color';
 
+import GameObject from 'components/GameObject';
+
 const Container = styled.div`
     height: 100%;
     width: 100%;
@@ -11,8 +13,8 @@ const Container = styled.div`
 class EditorContainer extends React.Component {
     render(){
         return (
-            <Container>
-                Editor
+            <Container className="Editor">
+                <GameObject />
             </Container>
         )
     }
