@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import oc from 'open-color';
 
-import EditorContainer from 'containers/EditorContainer';
+import FildContainer from 'containers/FildContainer';
 import SideBarContainer from 'containers/SideBarContainer';
 
 const EditorPage = styled.div`
@@ -14,7 +14,7 @@ class Editor extends React.Component {
     render(){
         return (
             <EditorPage>
-                <EditorContainer />
+                <FildContainer />
                 <SideBarContainer />
             </EditorPage>
         )

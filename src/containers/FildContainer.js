@@ -8,9 +8,10 @@ const Container = styled.div`
     height: 100%;
     width: 100%;
     background-color: ${oc.gray[2]};
+    overflow: auto;
 `
 
-class EditorContainer extends React.Component {
+class FildContainer extends React.Component {
     render(){
         return (
             <Container className="Editor">
@@ -20,4 +21,4 @@ class EditorContainer extends React.Component {
     }
 }
 
-export default EditorContainer;
+export default FildContainer;
