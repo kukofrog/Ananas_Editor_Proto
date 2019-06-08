@@ -7061,6 +7061,11 @@ mobx@^2.3.5:
   resolved "https://registry.yarnpkg.com/mobx/-/mobx-2.7.0.tgz#cf3d82d18c0ca7f458d8f2a240817b3dc7e54a01"
   integrity sha1-zz2C0YwMp/RY2PKiQIF7PcflSgE=
 
+mobx@^5.10.0:
+  version "5.10.0"
+  resolved "https://registry.yarnpkg.com/mobx/-/mobx-5.10.0.tgz#6107a73a27aee72abdc977ab75f9ec0d0983aa61"
+  integrity sha512-pYtQtxr80ugbj7xO4pmZRm1n0ZqG2Wo+ykr/03ZRG18Ib8dqUgpzso6aEJyu3fM7JurFmC1dOqmjeCHO8N+3Yg==
+
 move-concurrently@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/move-concurrently/-/move-concurrently-1.0.1.tgz#be2c005fda32e0b29af1f05d7c4b33214c701f92"
