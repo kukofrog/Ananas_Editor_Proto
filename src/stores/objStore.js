@@ -16,15 +16,17 @@ class objStore {
     }
 
     @action
-    move = (index, x, y) => {
+    move = ({index, x, y}) => {
         this.objects[index].x = x;
         this.objects[index].y = y;
     }
 
     @action
-    changeSize = (index, width, height) => {
+    resize = ({index, width, height, x, y}) => {
         this.objects[index].width = width;
         this.objects[index].height = height;
+        this.objects[index].x = x;
+        this.objects[index].y = y;
     }
 
     @action

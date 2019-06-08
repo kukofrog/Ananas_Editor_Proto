@@ -17,17 +17,18 @@ const Container = styled.div`
 @observer
 class FildContainer extends React.Component {
     render(){
-        const { objects, put, remove, move, changeSize } = this.props.objStore;
+        const { objects, put, remove, move, resize } = this.props.objStore;
         return (
             <Container className="Editor">
                 { objects.map((obj,index) => (
                     <GameObject 
                         x={obj.x}
                         y={obj.y}
-                        put={put}
-                        remove={remove}
+                        width={obj.width}
+                        height={obj.height}
                         move={move}
-                        changeSize={changeSize}
+                        resize={resize}
+                        index={index}
                         key={index}
                     />
                 ))}
