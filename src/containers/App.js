@@ -1,5 +1,5 @@
 import React from 'react';
-import { Provider } from 'mobx-react';
+import { Provider } from "mobx-react";
 import Editor from 'pages/Editor';
 import { stores } from 'stores'
 

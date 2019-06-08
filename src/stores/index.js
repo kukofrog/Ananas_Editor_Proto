@@ -1,5 +1,5 @@
-import ObjectStore from './objectStore'
+import ObjStore from './objStore'
 
 export const stores = {
-    objectStore: new ObjectStore()
+    objStore: new ObjStore()
 }
