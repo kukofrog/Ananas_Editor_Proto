@@ -2,6 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 import oc from 'open-color';
 
+import { observer, inject } from 'mobx-react'
+
 import GameObject from 'components/GameObject';
 
 const Container = styled.div`
@@ -11,11 +13,24 @@ const Container = styled.div`
     overflow: auto;
 `
 
+@inject('objStore')
+@observer
 class FildContainer extends React.Component {
     render(){
+        const { objects, put, remove, move, changeSize } = this.props.objStore;
         return (
             <Container className="Editor">
-                <GameObject />
+                { objects.map((index, obj) => (
+                    <GameObject 
+                        x={obj.x}
+                        y={obj.y}
+                        put={put}
+                        remove={remove}
+                        move={move}
+                        changeSize={changeSize}
+                        key={index}
+                    />
+                ))}
             </Container>
         )
     }
