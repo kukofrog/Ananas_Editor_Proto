@@ -20,7 +20,7 @@ class FildContainer extends React.Component {
         const { objects, put, remove, move, changeSize } = this.props.objStore;
         return (
             <Container className="Editor">
-                { objects.map((index, obj) => (
+                { objects.map((obj,index) => (
                     <GameObject 
                         x={obj.x}
                         y={obj.y}

@@ -3,6 +3,8 @@ import styled from 'styled-components';
 import oc from 'open-color';
 import { observer, inject } from 'mobx-react'
 
+import ListObjItem from 'components/ListObjItem';
+
 const Container = styled.div`
     height: 100%;
     width: 400px;
@@ -31,19 +33,71 @@ const ObjProperty = styled.div`
     height: 400px;
 `
 
+const CreateForm = styled.form`
+    display: flex;
+`
+
+const Input = styled.input`
+
+`
+
 const CreateButton = styled.button`
+
 `
 
 @inject('objStore')
 @observer
 class SideBarContainer extends React.Component {
+
+    state = {
+        objName: ''
+    }
+
+    onChange = (e) => {
+        const { name, value } = e.target;
+        this.setState({
+            [name]: value
+        });
+        console.log(this.state);
+    }
+
+    onSubmit = (e) => {
+        e.preventDefault();
+
+        console.log('submit');
+
+        const newObj = {
+            name: this.state.objName,
+            x: 0,
+            y: 0,
+            height: 100,
+            width: 100
+        }
+
+        this.props.objStore.put(newObj);
+        this.setState({
+            objName: ''
+        });
+    }
+
     render(){
+        const { objects, put, remove } = this.props.objStore;
+
         return (
             <Container>
                 <Wrapper>
+                    <CreateForm onSubmit={this.onSubmit}>
+                        <Input name="objName" value={this.state.objName} onChange={this.onChange}/>
+                        <CreateButton>new obj</CreateButton>
+                    </CreateForm>
                     objList
                     <ObjList>
-
+                        {objects.map((obj,index) => (
+                            <ListObjItem 
+                                name={obj.name}
+                                key={index}
+                            />
+                        ))}
                     </ObjList>
                     ObjProperty
                     <ObjProperty>
