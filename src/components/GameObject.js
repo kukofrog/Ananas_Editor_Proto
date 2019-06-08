@@ -20,7 +20,6 @@ class GameObject extends React.Component {
     }
 
     render() {
-        console.log(this.state);
         return (
             <Rnd
                 size={{ width: this.state.width, height: this.state.height }}

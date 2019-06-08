@@ -26,6 +26,11 @@ class objStore {
         this.objects[index].width = width;
         this.objects[index].height = height;
     }
+
+    @action
+    get = (index) => {
+        return this.objects[index];
+    }    
 }
 
 export default objStore;

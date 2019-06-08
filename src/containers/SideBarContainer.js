@@ -4,6 +4,7 @@ import oc from 'open-color';
 import { observer, inject } from 'mobx-react'
 
 import ListObjItem from 'components/ListObjItem';
+import ObjProperty from 'components/ObjProperty';
 
 const Container = styled.div`
     height: 100%;
@@ -18,14 +19,6 @@ const Wrapper = styled.div`
 `
 
 const ObjList = styled.div`
-    display: flex;
-    flex-direction: column;
-    background-color: ${oc.red[7]};
-    width: 100%;
-    height: 400px;
-`
-
-const ObjProperty = styled.div`
     display: flex;
     flex-direction: column;
     background-color: ${oc.red[7]};
@@ -85,8 +78,8 @@ class SideBarContainer extends React.Component {
     }
 
     render(){
-        const { objects, put, remove } = this.props.objStore;
-
+        const { objects, get } = this.props.objStore;
+        const { selectedObj } = this.state;
         return (
             <Container>
                 <Wrapper>
@@ -100,15 +93,14 @@ class SideBarContainer extends React.Component {
                             <ListObjItem 
                                 name={obj.name}
                                 selectObj={this.selectObj}
+                                selected={selectedObj===index?true:false}
                                 index={index}
                                 key={index}
                             />
                         ))}
                     </ObjList>
                     ObjProperty
-                    <ObjProperty>
-
-                    </ObjProperty>
+                    <ObjProperty index={selectedObj} selectedObj={get(selectedObj)} />
                 </Wrapper>   
             </Container>
         )
