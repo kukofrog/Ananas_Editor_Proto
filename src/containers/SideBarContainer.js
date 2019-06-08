@@ -50,7 +50,8 @@ const CreateButton = styled.button`
 class SideBarContainer extends React.Component {
 
     state = {
-        objName: ''
+        objName: '',
+        selectedObj: null
     }
 
     onChange = (e) => {
@@ -58,13 +59,10 @@ class SideBarContainer extends React.Component {
         this.setState({
             [name]: value
         });
-        console.log(this.state);
     }
 
     onSubmit = (e) => {
         e.preventDefault();
-
-        console.log('submit');
 
         const newObj = {
             name: this.state.objName,
@@ -77,6 +75,12 @@ class SideBarContainer extends React.Component {
         this.props.objStore.put(newObj);
         this.setState({
             objName: ''
+        });
+    }
+
+    selectObj = (index) => {
+        this.setState({
+            selectedObj: index
         });
     }
 
@@ -95,6 +99,8 @@ class SideBarContainer extends React.Component {
                         {objects.map((obj,index) => (
                             <ListObjItem 
                                 name={obj.name}
+                                selectObj={this.selectObj}
+                                index={index}
                                 key={index}
                             />
                         ))}

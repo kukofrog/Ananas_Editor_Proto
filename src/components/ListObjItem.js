@@ -9,10 +9,15 @@ const Component = styled.div`
 `
 
 class ListObjItem extends React.Component {
+
+    onClick = () => {
+        this.props.selectObj(this.props.index);
+    }
+
     render() {
-        const {name, selected} = this.props;
+        const { name } = this.props;
         return (
-            <Component>
+            <Component onClick={this.onClick}>
                 {name}
             </Component>
         );
