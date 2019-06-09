@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import oc from 'open-color';
+import { observer, inject } from 'mobx-react'
 
 const Component = styled.div`
     display: flex;
@@ -12,12 +13,14 @@ const Component = styled.div`
 
 const H3 = styled.h3``
 
+@inject('objStore')
+@observer
 class ObjProperty extends React.Component {
 
     render() {
-        const { index, selectedObj } = this.props;
+        const { index, selectedObj } = this.props.objStore;
 
-        if(selectedObj === undefined){
+        if(selectedObj === null){
             return (<></>)
         }
 

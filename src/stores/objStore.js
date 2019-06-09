@@ -2,6 +2,14 @@ import { observable, action, computed } from 'mobx';
 
 class objStore {
     @observable objects = [];
+    @observable idx = null;
+    @observable selectedObj = null;
+
+    @action
+    select = (index) => {
+        this.idx = index;
+        this.selectedObj = this.objects[this.idx];
+    }
 
     @action
     put = (obj) => {
@@ -19,6 +27,9 @@ class objStore {
     move = ({index, x, y}) => {
         this.objects[index].x = x;
         this.objects[index].y = y;
+
+        this.selectedObj = this.objects[this.idx];
+        return;
     }
 
     @action
@@ -27,6 +38,9 @@ class objStore {
         this.objects[index].height = height;
         this.objects[index].x = x;
         this.objects[index].y = y;
+
+        this.selectedObj = this.objects[this.idx];
+        return;
     }
 
     @action

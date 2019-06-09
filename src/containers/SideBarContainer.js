@@ -43,8 +43,7 @@ const CreateButton = styled.button`
 class SideBarContainer extends React.Component {
 
     state = {
-        objName: '',
-        selectedObj: null
+        objName: ''
     }
 
     onChange = (e) => {
@@ -72,14 +71,11 @@ class SideBarContainer extends React.Component {
     }
 
     selectObj = (index) => {
-        this.setState({
-            selectedObj: index
-        });
+        this.props.objStore.select(index);
     }
 
     render(){
-        const { objects, get } = this.props.objStore;
-        const { selectedObj } = this.state;
+        const { objects, get, idx, selectedObj } = this.props.objStore;
         return (
             <Container>
                 <Wrapper>
@@ -93,14 +89,14 @@ class SideBarContainer extends React.Component {
                             <ListObjItem 
                                 name={obj.name}
                                 selectObj={this.selectObj}
-                                selected={selectedObj===index?true:false}
+                                selected={idx===index?true:false}
                                 index={index}
                                 key={index}
                             />
                         ))}
                     </ObjList>
                     ObjProperty
-                    <ObjProperty index={selectedObj} selectedObj={get(selectedObj)} />
+                    <ObjProperty index={idx} selectedObj={selectedObj} />
                 </Wrapper>   
             </Container>
         )
