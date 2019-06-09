@@ -17,7 +17,7 @@ const Container = styled.div`
 @observer
 class FildContainer extends React.Component {
     render(){
-        const { objects, put, remove, move, resize } = this.props.objStore;
+        const { objects, move, resize, select } = this.props.objStore;
         return (
             <Container className="Editor">
                 { objects.map((obj,index) => (
@@ -28,6 +28,7 @@ class FildContainer extends React.Component {
                         height={obj.height}
                         move={move}
                         resize={resize}
+                        select={select}
                         index={index}
                         key={index}
                     />

@@ -18,7 +18,7 @@ const H3 = styled.h3``
 class ObjProperty extends React.Component {
 
     render() {
-        const { index, selectedObj } = this.props.objStore;
+        const { idx, selectedObj } = this.props.objStore;
 
         if(selectedObj === null){
             return (<></>)
@@ -26,7 +26,7 @@ class ObjProperty extends React.Component {
 
         return (
             <Component>
-                <H3>index:{index}</H3>
+                <H3>index:{idx}</H3>
                 <H3>name:{selectedObj.name}</H3>
                 <H3>x:{selectedObj.x}</H3>
                 <H3>y:{selectedObj.y}</H3>

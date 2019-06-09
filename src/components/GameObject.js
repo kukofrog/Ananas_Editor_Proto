@@ -20,14 +20,15 @@ class GameObject extends React.Component {
     }
 
     render() {
-        const { x, y, width, height, move, resize, index } = this.props;
+        const { x, y, width, height, move, resize, select, index } = this.props;
 
         console.log(this.props)
         return (
             <Rnd
                 size={{ width: width, height: height }}
                 position={{ x: x, y: y }}
-                onDragStop={(e, d) => { move({ index, x:d.x, y:d.y }) }}
+                onDragStart={(e, d) => { select(index) }}
+                onDrag={(e, d) => { move({ index, x:d.x, y:d.y }) }}
                 onResize={(e, direction, ref, delta, position) => {
                     resize({
                         index: index,

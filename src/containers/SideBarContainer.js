@@ -96,7 +96,7 @@ class SideBarContainer extends React.Component {
                         ))}
                     </ObjList>
                     ObjProperty
-                    <ObjProperty index={idx} selectedObj={selectedObj} />
+                    <ObjProperty />
                 </Wrapper>   
             </Container>
         )
