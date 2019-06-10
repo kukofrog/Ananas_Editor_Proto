@@ -56,6 +56,10 @@ class SideBarContainer extends React.Component {
     onSubmit = (e) => {
         e.preventDefault();
 
+        if(this.state.objName === ''){
+            return;
+        }
+
         const newObj = {
             name: this.state.objName,
             x: 0,
