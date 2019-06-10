@@ -13,9 +13,17 @@ const Component = styled.div`
 
 const H3 = styled.h3``
 
+const DeleteButton = styled.button`
+
+`
+
 @inject('objStore')
 @observer
 class ObjProperty extends React.Component {
+
+    delete = (e) => {
+        this.props.objStore.remove(this.props.objStore.idx);
+    }
 
     render() {
         const { idx, selectedObj } = this.props.objStore;
@@ -32,6 +40,7 @@ class ObjProperty extends React.Component {
                 <H3>y:{selectedObj.y}</H3>
                 <H3>width:{selectedObj.width}</H3>
                 <H3>height:{selectedObj.height}</H3>
+                <DeleteButton onClick={this.delete}>Delete</DeleteButton>
             </Component>
         );
     }

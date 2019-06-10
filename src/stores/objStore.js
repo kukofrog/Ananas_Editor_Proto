@@ -19,7 +19,7 @@ class objStore {
 
     @action
     remove = (index) => {
-        this.objects = this.objects.splice(index, 1);
+        this.objects.splice(index, 1);
         return;
     }
 

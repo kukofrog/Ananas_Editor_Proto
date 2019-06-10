@@ -21,8 +21,6 @@ class GameObject extends React.Component {
 
     render() {
         const { x, y, width, height, move, resize, select, index } = this.props;
-
-        console.log(this.props)
         return (
             <Rnd
                 size={{ width: width, height: height }}

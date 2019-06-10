@@ -8,7 +8,7 @@ const Component = styled.div`
     background-color: ${oc.gray[1]};
 
     ${props => (
-        props.selected?`background-color: ${oc.gray[3]}`:``
+        props.selected?`background-color: ${oc.blue[3]}`:``
     )}
 `
 
